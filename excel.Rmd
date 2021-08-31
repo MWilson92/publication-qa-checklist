@@ -1,0 +1,58 @@
+---
+title: "Excel tables"
+---
+
+## Supporting summary tables
+
+[Skip to data checklist](#data_checklist)
+
+[Skip to formatting checklist](#format_checklist)
+
+All of our statistics outputs are published with supporting Excel summary tables that contain the most granular data that we release for each publication. This may also include data that is not part of or not discussed in the main summary narrative.
+
+There are a number of data and formatting checks that we need to carry out on the supporting tables to make sure that they are suitable for release, including meeting GDS accessibility guidelines where possible and that statistical disclosure control (SDC) has been applied where appropriate. Automation of Excel formatting and SDC application is under development to make this task easier and less prone to error, however checks will always be required.
+
+## Data
+
+The most important part of any publication is the data that is based upon; high quality, accurate data is the foundation of all of our statistics. If all data is correct then anything created further downstream including charts, graphics, and analysis has much less room for error. It follows then that the data in the supporting tables should be the first thing to be checked once the publication is ready. 
+
+
+
+### Checklist {#data_checklist}
+
+<input type="checkbox" unchecked> totals match between tables </input>
+
+## Formatting
+
+lorem ispom
+
+lorem ispom
+
+lorem ispom
+
+lorem ispom
+
+lorem ispom
+
+lorem ispom
+
+lorem ispom
+
+lorem ispom
+
+lorem ispom
+
+lorem ispom
+
+lorem ispom
+
+lorem ispom
+
+lorem ispom
+
+lorem ispom
+
+lorem ispom
+lorem ispom
+
+### Checklist {#format_checklist}

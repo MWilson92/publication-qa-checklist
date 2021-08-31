@@ -1,0 +1,15 @@
+name: "OS Publication QR"
+navbar:
+  title: "Official Statistics"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Excel tables"
+      href: excel.html
+    - text: "Code Review"
+      href: code_reviews.html
+output:
+  html_document:
+    css: styles.css
