@@ -4,8 +4,6 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html
     - text: "Excel tables"
       href: excel.html
     - text: "Code Review"
@@ -13,3 +11,4 @@ navbar:
 output:
   html_document:
     css: styles.css
+exclude: ["packages", "nhsuk_styles.css", "test_navbar.html"]
