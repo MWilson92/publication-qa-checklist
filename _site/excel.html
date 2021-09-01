@@ -245,10 +245,10 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="about.html">About</a>
+  <a href="excel.html">Excel tables</a>
 </li>
 <li>
-  <a href="excel.html">Excel tables</a>
+  <a href="html_outputs.html">HTML outputs</a>
 </li>
 <li>
   <a href="code_reviews.html">Code Review</a>
@@ -269,22 +269,34 @@ $(document).ready(function () {
 
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#supporting-summary-tables">Supporting summary tables</a></li>
+<li><a href="#data">Data</a><ul>
+<li><a href="#data_checklist">Checklist</a></li>
+</ul></li>
+<li><a href="#formatting">Formatting</a><ul>
+<li><a href="#format_checklist">Checklist</a></li>
+</ul></li>
+<li><a href="#documentation">Documentation</a></li>
+</ul>
+</div>
 
-<div id="supporting-summary-tables" class="section level2">
-<h2>Supporting summary tables</h2>
+<div id="supporting-summary-tables" class="section level1">
+<h1>Supporting summary tables</h1>
 <p><a href="#data_checklist">Skip to data checklist</a></p>
 <p><a href="#format_checklist">Skip to formatting checklist</a></p>
 <p>All of our statistics outputs are published with supporting Excel summary tables that contain the most granular data that we release for each publication. This may also include data that is not part of or not discussed in the main summary narrative.</p>
 <p>There are a number of data and formatting checks that we need to carry out on the supporting tables to make sure that they are suitable for release, including meeting GDS accessibility guidelines where possible and that statistical disclosure control (SDC) has been applied where appropriate. Automation of Excel formatting and SDC application is under development to make this task easier and less prone to error, however checks will always be required.</p>
 </div>
-<div id="data" class="section level2">
-<h2>Data</h2>
+<div id="data" class="section level1">
+<h1>Data</h1>
 <p>The most important part of any publication is the data that is based upon; high quality, accurate data is the foundation of all of our statistics. If all data is correct then anything created further downstream including charts, graphics, and analysis has much less room for error. It follows then that the data in the supporting tables should be the first thing to be checked once the publication is ready.</p>
 <p>The data in the excel tables should be checked after a code review of the <code>SQL</code> to extract the data from data warehouse has been completed. If the publication has an existing RAP with previously reviewed code then a code review is not necessary unless any code changes have been implemented.</p>
 <p>Below is a checklist of the things that should be considered when assuring the data. This list <strong>is not</strong> exhaustive.</p>
 <p><strong>Please note: These checkboxes will not stay marked if you refresh or navigate away from this page</strong></p>
-<div id="data_checklist" class="section level3">
-<h3>Checklist</h3>
+<div id="data_checklist" class="section level2">
+<h2>Checklist</h2>
 <p><input type="checkbox" unchecked> total items and NIC match between tables</input><br />
 <em>Patient counts will not match depending on the level that they are taken at.</em></p>
 <p><input type="checkbox" unchecked> total items and NIC match other published sources of data</input><br />
@@ -294,16 +306,18 @@ $(document).ready(function () {
 <p><input type="checkbox" unchecked> are you able to recreate the data by re-running the RAP <code>SQL</code> code</input></p>
 <p><input type="checkbox" unchecked> does the data meet the requirements set out</input><br />
 <em>Is the data for England only? Are there any erroneous data points? Are the breakdowns at an appropriate level?</em></p>
+<p><input type="checkbox" unchecked> has external data been sourced correctly</input><br />
+<em>Is it clear where external data has come from? Is it cited correctly?</em></p>
 </div>
 </div>
-<div id="formatting" class="section level2">
-<h2>Formatting</h2>
+<div id="formatting" class="section level1">
+<h1>Formatting</h1>
 <p>Once the underlying data of the publication has been checked we need to make sure that the formatting of the spreadsheets is correct and accessible as possible. GSS have issued guidance on releasing statistics in spreadsheets that can be found on their website (<a href="https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/" class="uri">https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/</a>).</p>
-<p><strong>All NHSBSA GSG badged statisticians or those involved with Official Statistics production should familiarise themselves with this guidances</strong></p>
+<p><strong>All NHSBSA GSG badged statisticians or those involved with Official Statistics production should familiarise themselves with this guidance</strong></p>
 <p>It should be expected that the responsible statistician of the publication has ensured that this guidance has been followed, however this should be checked and any elements that do not match this guidance should have a valid reason provided for it.</p>
 <p>Much of the checklist below comes from <a href="https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/#section-2">the checklists provided by GSS themselves</a>. The elements below are those listed as essential for passing accessibility criteria by GSS.</p>
-<div id="format_checklist" class="section level3">
-<h3>Checklist</h3>
+<div id="format_checklist" class="section level2">
+<h2>Checklist</h2>
 <p><input type="checkbox" unchecked> are tables marked up as such, including a meaningful name</input></p>
 <p><input type="checkbox" unchecked> have all merged cells, split cells, and nested tables been removed</input></p>
 <p><input type="checkbox" unchecked> are there no blank rows or columns within tables</input></p>
@@ -325,8 +339,8 @@ $(document).ready(function () {
 <p><input type="checkbox" unchecked> is the cursor in cell A1 on sheet 1 when you open the workbook</input></p>
 </div>
 </div>
-<div id="documentation" class="section level2">
-<h2>Documentation</h2>
+<div id="documentation" class="section level1">
+<h1>Documentation</h1>
 <p>These checklists can be used to help you keep track of your progress but do not make a permanent record of the checks carried out. Please make sure you complete a QR log with the steps taken to assure supporting excel tables and data.</p>
 </div>
 

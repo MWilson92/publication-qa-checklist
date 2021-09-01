@@ -1,0 +1,42 @@
+---
+title: "HTML outputs"
+---
+
+# Summary narrative
+
+[Skip to figures checklist](#figures_checklist)
+
+[Skip to charts checklist]()
+
+Our HTML outputs are the main way in which our users will consume our statistics so it's essential that all figures, charts, and narrative are assured before they are released. By the time that data is displayed in the HTML output it should have been assured a multiple earlier stages. However, we must check any calculated percentages and make sure that any stated figures relate to the correct time periods.
+
+In order to make the QR process easier an identical word document should be produced alongside the HTML output to allow the capturing of feedback in comments and track changes. At the moment this is done by copying the narrative from the HTML document manually into a word document. 
+
+**In the future, possibility of having the R Markdown document produce multiple output formats should be investigated.**
+
+# Figures and percentages
+
+All figures, percentages, and calculated rates in the narrative need to be checked. By this point the base data should have been checked and found to be correct. However, it is still possible for calculation and rounding errors to occur, along with typos.
+
+When checking figures and percentages all narrative should be proof read with the reviewing statistician suggesting any improvements to convey the story of the statistics in a better way, even suggesting new areas for analysis or points that have not been explored fully.
+
+Below is a list of things that should be checked when assuring figures and percentages. This list **is not** exhaustive.
+
+**Please note: these checkboxes will not stay marked if you refresh or navigate away from this page.**
+
+## Checklist {#figures_checklist}
+
+<input type="checkbox" unchecked> do the figures stated match those displayed in charts and Excel tables</input>
+
+<input type="checkbox" unchecked> are figures and percentages rounded to 3 significant figures in most cases</input>  
+*There are some instances where rounding to 4 or to 2 or less significant figures may be appropriate.*
+
+<input type="checkbox" unchecked> have the calculated percentages and changes been verified</input>
+
+<input type="checkbox" unchecked> are the time periods that the figures relate to correct</input>
+
+<input type="checkbox" unchecked> are "increase"/"decrease" used correctly</input>
+*If the chart shows an increase between 2 time periods, is this reflected in the narrative?*
+
+# Charts
+

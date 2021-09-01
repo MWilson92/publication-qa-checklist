@@ -245,10 +245,10 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="about.html">About</a>
+  <a href="excel.html">Excel tables</a>
 </li>
 <li>
-  <a href="excel.html">Excel tables</a>
+  <a href="html_outputs.html">HTML outputs</a>
 </li>
 <li>
   <a href="code_reviews.html">Code Review</a>
@@ -269,9 +269,20 @@ $(document).ready(function () {
 
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#reproducible-analytical-pipelines-rap">Reproducible analytical pipelines (RAP)</a></li>
+<li><a href="#git-and-gitlab">Git and GitLab</a><ul>
+<li><a href="#accounts">Accounts</a></li>
+<li><a href="#cloning-a-repository">Cloning a repository</a></li>
+<li><a href="#branches-and-merge-requests">Branches and merge requests</a></li>
+</ul></li>
+<li><a href="#code-reviews">Code reviews</a></li>
+</ul>
+</div>
 
-<div id="reproducible-analytical-pipelines-rap" class="section level2">
-<h2>Reproducible analytical pipelines (RAP)</h2>
+<div id="reproducible-analytical-pipelines-rap" class="section level1">
+<h1>Reproducible analytical pipelines (RAP)</h1>
 <p>As part of RAP development all code should be peer reviewed by another member of the Official Statistics team. There are a wide variety of skills and strengths within the team which may mean that a RAP project may not be able to be fully reviewed by a single team member, in these instances a review should take place under the guidance of a senior person and the opportunity be used to share knowledge.</p>
 <p>This guidance is not intended to provide an in-depth overview of Git, GitLab, or version control software, but give a list of steps that should be followed during RAP development and improvement to quality assure our code. By following these practices we ensure that we are building in quality from the the very initial stages of our statistics production, while also helping to build skills and share knowledge within the team.</p>
 <p>For useful Git resources please see:</p>
@@ -281,16 +292,16 @@ $(document).ready(function () {
 <li></li>
 </ul>
 </div>
-<div id="git-and-gitlab" class="section level2">
-<h2>Git and GitLab</h2>
+<div id="git-and-gitlab" class="section level1">
+<h1>Git and GitLab</h1>
 <p>All Official Statistics code projects should stored and managed using version control software such as Git. The current NHSBSA platform of choice is GitLab and can be accessed on the AON VPN at <a href="https://gitlab.cloud.nhsbsa.nhs.uk/" class="uri">https://gitlab.cloud.nhsbsa.nhs.uk/</a>.</p>
-<div id="accounts" class="section level3">
-<h3>Accounts</h3>
+<div id="accounts" class="section level2">
+<h2>Accounts</h2>
 <p>A GitLab account should automatically be created for you on joining the team, however if this has not been actioned a service request must be raised FAO of Platform Services. In your request ask to be made a <code>maintainer</code> of the <code>Insight &gt; Statistics</code> group.</p>
 <p>On first accessing the <a href="https://gitlab.cloud.nhsbsa.nhs.uk/">NHSBSA private GitLab instance</a> you might be greeted with a warning from your browser that the connection is not secure. Ignore this warning by navigating to the advanced settings link and proceeding to website.</p>
 </div>
-<div id="cloning-a-repository" class="section level3">
-<h3>Cloning a repository</h3>
+<div id="cloning-a-repository" class="section level2">
+<h2>Cloning a repository</h2>
 <p>Most Official Statistics code repositories will be mainly <code>R</code> based with <code>SQL</code> used to extract data from the Data Warehouse, therefore we can use the built in <code>Git</code> tools in R Studio to manage our projects. Currently, SSH keys cannot be used to clone from the NHSBSA GitLab, therefore we have to use HTTPS. Before we do anything in R Studio we have to change a config setting for <code>Git</code>. Open a command prompt (you can do this quickly by bringing up the windows menu by pressing the windows key, and then searching for ‘cmd’), and enter the following line of code:</p>
 <p><code>git config --global http.sslVerify false</code></p>
 <p>This bypasses the SSL certificate warning that you may have seen by accessing the GitLab instance in your browser. You can check if this has been successful by entering <code>git config --list</code>.</p>
@@ -299,15 +310,15 @@ $(document).ready(function () {
 <p>You will notice that the domain name is <strong>dps-gitlab.service.nhsbsa</strong>. This portion of the URL will need changing to <strong>gitlab.cloud.nhsbsa.nhs.uk</strong> in order to be able to clone.</p>
 <p>You can still also clone repositories using the Git command line or other software such as GitHub Desktop.</p>
 </div>
-<div id="branches-and-merge-requests" class="section level3">
-<h3>Branches and merge requests</h3>
+<div id="branches-and-merge-requests" class="section level2">
+<h2>Branches and merge requests</h2>
 <p>When working collaboratively on a project all code additions, changes, and improvements should be handled using feature branches and merge requests. For example, if a new function is being added to an existing RAP a new branch should be created where code is created and tested before a merge request is submitted to trigger a code review by another member of the team.</p>
 <p>At the moment there are no tools to handle merge requests within R Studio, so these are all managed on the GitLab website. However, any code can still be viewed in the project by switching between the appropriate branches.</p>
 <p>Merge requests should be used trigger code reviews by other members of the team, and no branch should be merged without approval from at least one other person. Any member of the team can perform a code review so long as they feel comfortable doing so. Code reviews should be performed collaboratively if there are some advanced techniques used in the code and approval sought from all involved.</p>
 </div>
 </div>
-<div id="code-reviews" class="section level2">
-<h2>Code reviews</h2>
+<div id="code-reviews" class="section level1">
+<h1>Code reviews</h1>
 </div>
 
 

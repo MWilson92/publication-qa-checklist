@@ -2,7 +2,7 @@
 title: "Code reviews"
 ---
 
-## Reproducible analytical pipelines (RAP)
+# Reproducible analytical pipelines (RAP)
 
 As part of RAP development all code should be peer reviewed by another member of the Official Statistics team. There are a wide variety of skills and strengths within the team which may mean that a RAP project may not be able to be fully reviewed by a single team member, in these instances a review should take place under the guidance of a senior person and the opportunity be used to share knowledge.
 
@@ -14,17 +14,17 @@ For useful Git resources please see:
 *
 *
 
-## Git and GitLab
+# Git and GitLab
 
 All Official Statistics code projects should stored and managed using version control software such as Git. The current NHSBSA platform of choice is GitLab and can be accessed on the AON VPN at https://gitlab.cloud.nhsbsa.nhs.uk/. 
 
-### Accounts
+## Accounts
 
 A GitLab account should automatically be created for you on joining the team, however if this has not been actioned a service request must be raised FAO of Platform Services. In your request ask to be made a `maintainer` of the `Insight > Statistics` group.
 
 On first accessing the [NHSBSA private GitLab instance](https://gitlab.cloud.nhsbsa.nhs.uk/) you might be greeted with a warning from your browser that the connection is not secure. Ignore this warning by navigating to the advanced settings link and proceeding to website.
 
-### Cloning a repository
+## Cloning a repository
 
 Most Official Statistics code repositories will be mainly `R` based with `SQL` used to extract data from the Data Warehouse, therefore we can use the built in `Git` tools in R Studio to manage our projects. Currently, SSH keys cannot be used to clone from the NHSBSA GitLab, therefore we have to use HTTPS. Before we do anything in R Studio we have to change a config setting for `Git`. Open a command prompt (you can do this quickly by bringing up the windows menu by pressing the windows key, and then searching for 'cmd'), and enter the following line of code:
 
@@ -40,7 +40,7 @@ You will notice that the domain name is **dps-gitlab.service.nhsbsa**. This port
 
 You can still also clone repositories using the Git command line or other software such as GitHub Desktop.
 
-### Branches and merge requests
+## Branches and merge requests
 
 When working collaboratively on a project all code additions, changes, and improvements should be handled using feature branches and merge requests. For example, if a new function is being added to an existing RAP a new branch should be created where code is created and tested before a merge request is submitted to trigger a code review by another member of the team.
 
@@ -48,6 +48,6 @@ At the moment there are no tools to handle merge requests within R Studio, so th
 
 Merge requests should be used trigger code reviews by other members of the team, and no branch should be merged without approval from at least one other person. Any member of the team can perform a code review so long as they feel comfortable doing so. Code reviews should be performed collaboratively if there are some advanced techniques used in the code and approval sought from all involved.
 
-## Code reviews
+# Code reviews
 
 
