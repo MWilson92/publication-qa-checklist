@@ -6,7 +6,7 @@ body{
 h2,
 .nhsuk-heading-l {
   font-size: 24px;
-  font-size: 1.5rem;
+  /*font-size: 1.5rem;*/
   line-height: 1.33333;
   display: block;
   font-weight: 600;
@@ -17,7 +17,7 @@ h2,
 h3,
 .nhsuk-heading-m {
   font-size: 20px;
-  font-size: 1.25rem;
+  /*font-size: 1.25rem;*/
   line-height: 1.4;
   display: block;
   font-weight: 600;
@@ -28,7 +28,7 @@ h3,
 h4,
 .nhsuk-heading-s {
   font-size: 18px;
-  font-size: 1.125rem;
+  /*font-size: 1.125rem;*/
   line-height: 1.55556;
   display: block;
   font-weight: 600;
@@ -68,7 +68,7 @@ h4,
 address, p,
 .nhsuk-body-m {
   font-size: 16px;
-  font-size: 1rem;
+  /*font-size: 1rem;*/
   line-height: 1.5;
   display: block;
   margin-top: 0;
@@ -79,7 +79,7 @@ address, p,
   address, p,
 .nhsuk-body-m {
     font-size: 19px;
-    font-size: 1.1875rem;
+    /*font-size: 1.1875rem;*/
     line-height: 1.47368;
   }
 }

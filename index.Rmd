@@ -6,6 +6,6 @@ This website is intended to provide members of the NHSBSA Official Statistics te
 
 ## Documentation
 
-Any steps taken by the reviewing statistician should be recorded in a 'QR log' to ensure that an there is an audit trail of the steps taken to assure the publication. This is required in case we fall into breach of the [Code of Practice of Statistics](https://code.statisticsauthority.gov.uk/) and are required to involve the [Office for Statistics Regulation (OSR)](https://osr.statisticsauthority.gov.uk/) and submit a breach report.
+Any steps taken by the reviewing statistician should be recorded in a 'QR log' to ensure that there is an audit trail of the steps taken to assure the publication. This is required in case we fall into breach of the [Code of Practice of Statistics](https://code.statisticsauthority.gov.uk/) and are required to involve the [Office for Statistics Regulation (OSR)](https://osr.statisticsauthority.gov.uk/) and submit a breach report.
 
-A QR log can take any form (Excel spreadsheet, R Markdown doc, word doc, etc.) so long as it is easy for the responsible statistician to understand and any issues are communicately correctly. Some examples of previous QR logs can be found on the [Official Statistics Sharepoint site](https://nhsbsauk.sharepoint.com/:f:/t/OfficialStatistics109/EsASBsMSUGFIlig_4eev-UsBuesTOyRn0Ih32bY4wFUW_w?e=M610ta).
+A QR log can take any form (Excel spreadsheet, R Markdown doc, word doc, etc.) so long as it is easy for the responsible statistician to understand and any issues are communicated correctly. Some examples of previous QR logs can be found on the [Official Statistics Sharepoint site](https://nhsbsauk.sharepoint.com/:f:/t/OfficialStatistics109/EsASBsMSUGFIlig_4eev-UsBuesTOyRn0Ih32bY4wFUW_w?e=M610ta).
