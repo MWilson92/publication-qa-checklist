@@ -6,9 +6,13 @@ navbar:
       href: index.html
     - text: "Excel tables"
       href: excel.html
+    - text: "HTML outputs"
+      href: html_outputs.html
     - text: "Code Review"
       href: code_reviews.html
 output:
   html_document:
     css: styles.css
+    toc: true
+    toc_depth: 2
 exclude: ["packages", "nhsuk_styles.css", "test_navbar.html"]
