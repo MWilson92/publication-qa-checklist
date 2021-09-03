@@ -4,10 +4,6 @@ title: "HTML outputs"
 
 # Summary narrative
 
-[Skip to figures checklist](#figures_checklist)
-
-[Skip to charts checklist]()
-
 Our HTML outputs are the main way in which our users will consume our statistics so it's essential that all figures, charts, and narrative are assured before they are released. By the time that data is displayed in the HTML output it should have been assured a multiple earlier stages. However, we must check any calculated percentages and make sure that any stated figures relate to the correct time periods.
 
 In order to make the QR process easier an identical word document should be produced alongside the HTML output to allow the capturing of feedback in comments and track changes. At the moment this is done by copying the narrative from the HTML document manually into a word document. 
@@ -24,8 +20,8 @@ Below is a list of things that should be checked when assuring figures and perce
 
 **Please note: these checkboxes will not stay marked if you refresh or navigate away from this page.**
 
-## Checklist {#figures_checklist}
-
+## Checklist
+ 
 <input type="checkbox" unchecked> do the figures stated match those displayed in charts and Excel tables</input>
 
 <input type="checkbox" unchecked> are figures and percentages rounded to 3 significant figures in most cases</input>  
@@ -40,3 +36,35 @@ Below is a list of things that should be checked when assuring figures and perce
 
 # Charts
 
+All charts and visualisations should be checked alongside figures and percentages to make sure they are correct.
+
+## Checklist
+
+<input type="checkbox" unchecked> do the charts render correctly</input>
+
+<input type="checkbox" unchecked> does data displayed in the chart match the commentary below it</input>
+
+<input type="checkbox" unchecked> are there appropriate axis titles and title</input>
+
+<input type="checkbox" unchecked> does the "figure" number match the order of the figure</input>
+*For example is "figure 2" the 2nd figure?*
+
+<input type="checkbox" unchecked> is the colour palette used correct</input>
+
+<input type="checkbox" unchecked> if data labels are on, do they all render and are they to the correct significant figures</input>
+
+<input type="checkbox" unchecked> has the appropriate type of chart been used</input>
+
+<input type="checkbox" unchecked> is there a source link below each chart</input>
+
+# Proof read
+
+The full HTML narrative should be proof read for spelling and grammar errors by the reviewing statistician as well as one other member of the team. The spell checking function of word should also be used to try and identify any errors.
+
+# Accessibility
+
+Accessibility concerns should have been addressed already by the producing statistician in the R Markdown document. However, tools in Chrome such as Wave, Axe, and Lighthouse should be used to identify any errors that would cause accessibility issues.
+
+# Documentation
+
+These checklists can be used to help you keep track of your progress but do not make a permanent record of the checks carried out. Please make sure you complete a QR log with the steps taken to assure the statistical narrative.

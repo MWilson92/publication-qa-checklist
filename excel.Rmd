@@ -4,10 +4,6 @@ title: "Excel tables"
 
 # Supporting summary tables
 
-[Skip to data checklist](#data_checklist)
-
-[Skip to formatting checklist](#format_checklist)
-
 All of our statistics outputs are published with supporting Excel summary tables that contain the most granular data that we release for each publication. This may also include data that is not part of or not discussed in the main summary narrative.
 
 There are a number of data and formatting checks that we need to carry out on the supporting tables to make sure that they are suitable for release, including meeting GDS accessibility guidelines where possible and that statistical disclosure control (SDC) has been applied where appropriate. Automation of Excel formatting and SDC application is under development to make this task easier and less prone to error, however checks will always be required.
@@ -22,7 +18,7 @@ Below is a checklist of the things that should be considered when assuring the d
 
 __Please note: These checkboxes will not stay marked if you refresh or navigate away from this page__
 
-## Checklist {#data_checklist}
+## Checklist
 
 <input type="checkbox" unchecked> total items and NIC match between tables</input>  
 *Patient counts will not match depending on the level that they are taken at.*
@@ -51,7 +47,7 @@ It should be expected that the responsible statistician of the publication has e
 
 Much of the checklist below comes from [the checklists provided by GSS themselves](https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/#section-2). The elements below are those listed as essential for passing accessibility criteria by GSS.
 
-## Checklist {#format_checklist}
+## Checklist
 
 <input type="checkbox" unchecked> are tables marked up as such, including a meaningful name</input>
 

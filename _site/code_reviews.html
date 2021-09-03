@@ -277,24 +277,28 @@ $(document).ready(function () {
 <li><a href="#cloning-a-repository">Cloning a repository</a></li>
 <li><a href="#branches-and-merge-requests">Branches and merge requests</a></li>
 </ul></li>
-<li><a href="#code-reviews">Code reviews</a></li>
+<li><a href="#code-reviews">Code reviews</a><ul>
+<li><a href="#what-to-review">What to review</a></li>
+<li><a href="#when-to-review">When to review</a></li>
+<li><a href="#commits">Commits</a></li>
+</ul></li>
 </ul>
 </div>
 
 <div id="reproducible-analytical-pipelines-rap" class="section level1">
 <h1>Reproducible analytical pipelines (RAP)</h1>
 <p>As part of RAP development all code should be peer reviewed by another member of the Official Statistics team. There are a wide variety of skills and strengths within the team which may mean that a RAP project may not be able to be fully reviewed by a single team member, in these instances a review should take place under the guidance of a senior person and the opportunity be used to share knowledge.</p>
-<p>This guidance is not intended to provide an in-depth overview of Git, GitLab, or version control software, but give a list of steps that should be followed during RAP development and improvement to quality assure our code. By following these practices we ensure that we are building in quality from the the very initial stages of our statistics production, while also helping to build skills and share knowledge within the team.</p>
+<p>This guidance is not intended to provide an in-depth overview of Git, GitLab, or version control software, but give a list of steps that should be followed during RAP development and improvement to quality assure our code. By following these practices we ensure that we are building in quality from the very initial stages of our statistics production, while also helping to build skills and share knowledge within the team.</p>
 <p>For useful Git resources please see:</p>
 <ul>
-<li></li>
-<li></li>
-<li></li>
+<li><p><a href="https://happygitwithr.com/">Happy Git for the useR</a></p></li>
+<li><p><a href="https://r-bio.github.io/intro-git-rstudio/">intro to git with RStudio</a></p></li>
+<li><p><a href="https://docs.gitlab.com/">GitLab documentation</a></p></li>
 </ul>
 </div>
 <div id="git-and-gitlab" class="section level1">
 <h1>Git and GitLab</h1>
-<p>All Official Statistics code projects should stored and managed using version control software such as Git. The current NHSBSA platform of choice is GitLab and can be accessed on the AON VPN at <a href="https://gitlab.cloud.nhsbsa.nhs.uk/" class="uri">https://gitlab.cloud.nhsbsa.nhs.uk/</a>.</p>
+<p>All Official Statistics code projects should be stored and managed using version control software such as Git. The current NHSBSA platform of choice is GitLab and can be accessed on the AON VPN at <a href="https://gitlab.cloud.nhsbsa.nhs.uk/" class="uri">https://gitlab.cloud.nhsbsa.nhs.uk/</a>.</p>
 <div id="accounts" class="section level2">
 <h2>Accounts</h2>
 <p>A GitLab account should automatically be created for you on joining the team, however if this has not been actioned a service request must be raised FAO of Platform Services. In your request ask to be made a <code>maintainer</code> of the <code>Insight &gt; Statistics</code> group.</p>
@@ -319,6 +323,36 @@ $(document).ready(function () {
 </div>
 <div id="code-reviews" class="section level1">
 <h1>Code reviews</h1>
+<p>Code reviews are intended to improve code quality, catch bugs, make sure code is well documented, and provides opportunities to share skills and knowledge in the team.</p>
+<p>There are lots of opinions in the wild about code reviews, there are no hard and fast rules for what a review should look like or a checklist to go through to make a good one. Therefore it is essential that they are used to be constructive and supportive, reviewers are there to critique the code, not the coder (<strong>GOOD:</strong> “good work”, “perhaps you could try x”, “what is the reasoning behind this choice?” <strong>BAD:</strong> “this doesn’t work”, “you should have done y”, “poor choice, do what I would do instead”).</p>
+<p>Some resources that first time reviewers might find handy (although they’re all geared towards software engineering rather than analytical code).</p>
+<ul>
+<li><p><a href="https://www.codeproject.com/Articles/524235/Codeplusreviewplusguidelines">In-depth checklist and tips</a></p></li>
+<li><p><a href="https://github.com/thoughtbot/guides/tree/main/code-review">Quick tips</a></p></li>
+<li><p><a href="https://smartbear.com/learn/code-review/why-review-code/">Why review code?</a></p></li>
+</ul>
+<div id="what-to-review" class="section level2">
+<h2>What to review</h2>
+<p>When developing a RAP, all code – SQL and R – should be subject to a review. If the RAP is too large to be handled in one review then it should be broken down into related chunks and assigned to multiple reviewers.</p>
+<p>If making improvements to an existing RAP then only code that changes the behaviour of the RAP, or changes it’s outputs should be reviewed. For example, making amendments to improve performance of code doesn’t need to be reviewed. However, if changing a chart library or making changes to the data extracted from the data warehouse then a full review should be triggered.</p>
+</div>
+<div id="when-to-review" class="section level2">
+<h2>When to review</h2>
+<p>Reviews should only be triggered after all work is complete on a project or feature of the RAP that is being improved, and only after all automated checks (unit tests, style checks, etc.) have been completed and passed. The code should have been formally and informally tested by the developing statistician before it comes to a reviewer. That is, it will run without issue in the manner as intended. Don’t submit for review if you don’t know if the join you’re using is faulty or not.</p>
+</div>
+<div id="commits" class="section level2">
+<h2>Commits</h2>
+<p>As a developer, you should get into the habit of using commits little and often. Your commit messages can help a reviewer follow your logic for doing something or even how something works. They should always be written in the imperative as well – fix bug, not fixed bug. e.g.</p>
+<pre><code>create visualisation total items
+
+use NHSBSA highcharts functions to create line chart for total items
+</code></pre>
+<pre><code>fix data manipulation bug
+
+use group_map2() within mutate() in order to calculate rates 
+within groups correctly
+</code></pre>
+</div>
 </div>
 
 
