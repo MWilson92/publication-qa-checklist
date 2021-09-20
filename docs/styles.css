@@ -1,0 +1,85 @@
+body{
+  font-family: Frutiger W01, Arial, Sans-serif;
+  font-size: 19px;
+}
+
+h2,
+.nhsuk-heading-l {
+  font-size: 24px;
+  /*font-size: 1.5rem;*/
+  line-height: 1.33333;
+  display: block;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+h3,
+.nhsuk-heading-m {
+  font-size: 20px;
+  /*font-size: 1.25rem;*/
+  line-height: 1.4;
+  display: block;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+h4,
+.nhsuk-heading-s {
+  font-size: 18px;
+  /*font-size: 1.125rem;*/
+  line-height: 1.55556;
+  display: block;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.nhsuk-caption-xl {
+  font-weight: 400;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.33333;
+  color: #4c6272;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.nhsuk-caption-l {
+  font-weight: 400;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: #4c6272;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.nhsuk-caption-m {
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #4c6272;
+  display: block;
+}
+
+address, p,
+.nhsuk-body-m {
+  font-size: 16px;
+  /*font-size: 1rem;*/
+  line-height: 1.5;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 40.0625em) {
+  address, p,
+.nhsuk-body-m {
+    font-size: 19px;
+    /*font-size: 1.1875rem;*/
+    line-height: 1.47368;
+  }
+}
