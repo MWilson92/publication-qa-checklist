@@ -58,6 +58,8 @@ There are lots of opinions in the wild about code reviews, there are no hard and
 
 Some resources that first time reviewers might find handy (although they're all geared towards software engineering rather than analytical code).
 
+* [Google's guide to code review](https://google.github.io/eng-practices/review/reviewer/looking-for.html)
+
 * [In-depth checklist and tips](https://www.codeproject.com/Articles/524235/Codeplusreviewplusguidelines)
 
 * [Quick tips](https://github.com/thoughtbot/guides/tree/main/code-review)

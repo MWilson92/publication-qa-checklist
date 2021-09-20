@@ -1,4 +1,5 @@
 name: "OS Publication QR"
+output_dir: docs
 navbar:
   title: "Official Statistics"
   left:
