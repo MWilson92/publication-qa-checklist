@@ -11,6 +11,9 @@ navbar:
       href: html_outputs.html
     - text: "Code Review"
       href: code_reviews.html
+  right:
+    - icon: fab fa-github
+      href: "https://github.com/MWilson92/publication-qa-checklist"
 output:
   html_document:
     css: styles.css
