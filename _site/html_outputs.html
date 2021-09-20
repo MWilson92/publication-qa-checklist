@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>HTML outputs</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Official Statistics</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="excel.html">Excel tables</a>
+</li>
+<li>
+  <a href="html_outputs.html">HTML outputs</a>
+</li>
+<li>
+  <a href="code_reviews.html">Code Review</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">HTML outputs</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#summary-narrative">Summary narrative</a></li>
+<li><a href="#figures-and-percentages">Figures and percentages</a><ul>
+<li><a href="#checklist">Checklist</a></li>
+</ul></li>
+<li><a href="#charts">Charts</a><ul>
+<li><a href="#checklist-1">Checklist</a></li>
+</ul></li>
+<li><a href="#proof-read">Proof read</a></li>
+<li><a href="#accessibility">Accessibility</a></li>
+<li><a href="#documentation">Documentation</a></li>
+</ul>
+</div>
+
+<div id="summary-narrative" class="section level1">
+<h1>Summary narrative</h1>
+<p>Our HTML outputs are the main way in which our users will consume our statistics so it’s essential that all figures, charts, and narrative are assured before they are released. By the time that data is displayed in the HTML output it should have been assured a multiple earlier stages. However, we must check any calculated percentages and make sure that any stated figures relate to the correct time periods.</p>
+<p>In order to make the QR process easier an identical word document should be produced alongside the HTML output to allow the capturing of feedback in comments and track changes. At the moment this is done by copying the narrative from the HTML document manually into a word document.</p>
+<p><strong>In the future, possibility of having the R Markdown document produce multiple output formats should be investigated.</strong></p>
+</div>
+<div id="figures-and-percentages" class="section level1">
+<h1>Figures and percentages</h1>
+<p>All figures, percentages, and calculated rates in the narrative need to be checked. By this point the base data should have been checked and found to be correct. However, it is still possible for calculation and rounding errors to occur, along with typos.</p>
+<p>When checking figures and percentages all narrative should be proof read with the reviewing statistician suggesting any improvements to convey the story of the statistics in a better way, even suggesting new areas for analysis or points that have not been explored fully.</p>
+<p>Below is a list of things that should be checked when assuring figures and percentages. This list <strong>is not</strong> exhaustive.</p>
+<p><strong>Please note: these checkboxes will not stay marked if you refresh or navigate away from this page.</strong></p>
+<div id="checklist" class="section level2">
+<h2>Checklist</h2>
+<p><input type="checkbox" unchecked> do the figures stated match those displayed in charts and Excel tables</input></p>
+<p><input type="checkbox" unchecked> are figures and percentages rounded to 3 significant figures in most cases</input><br />
+<em>There are some instances where rounding to 4 or to 2 or less significant figures may be appropriate.</em></p>
+<p><input type="checkbox" unchecked> have the calculated percentages and changes been verified</input></p>
+<p><input type="checkbox" unchecked> are the time periods that the figures relate to correct</input></p>
+<p><input type="checkbox" unchecked> are “increase”/“decrease” used correctly</input> <em>If the chart shows an increase between 2 time periods, is this reflected in the narrative?</em></p>
+</div>
+</div>
+<div id="charts" class="section level1">
+<h1>Charts</h1>
+<p>All charts and visualisations should be checked alongside figures and percentages to make sure they are correct.</p>
+<div id="checklist-1" class="section level2">
+<h2>Checklist</h2>
+<p><input type="checkbox" unchecked> do the charts render correctly</input></p>
+<p><input type="checkbox" unchecked> does data displayed in the chart match the commentary below it</input></p>
+<p><input type="checkbox" unchecked> are there appropriate axis titles and title</input></p>
+<p><input type="checkbox" unchecked> does the “figure” number match the order of the figure</input> <em>For example is “figure 2” the 2nd figure?</em></p>
+<p><input type="checkbox" unchecked> is the colour palette used correct</input></p>
+<p><input type="checkbox" unchecked> if data labels are on, do they all render and are they to the correct significant figures</input></p>
+<p><input type="checkbox" unchecked> has the appropriate type of chart been used</input></p>
+<p><input type="checkbox" unchecked> is there a source link below each chart</input></p>
+</div>
+</div>
+<div id="proof-read" class="section level1">
+<h1>Proof read</h1>
+<p>The full HTML narrative should be proof read for spelling and grammar errors by the reviewing statistician as well as one other member of the team. The spell checking function of word should also be used to try and identify any errors.</p>
+</div>
+<div id="accessibility" class="section level1">
+<h1>Accessibility</h1>
+<p>Accessibility concerns should have been addressed already by the producing statistician in the R Markdown document. However, tools in Chrome such as Wave, Axe, and Lighthouse should be used to identify any errors that would cause accessibility issues.</p>
+</div>
+<div id="documentation" class="section level1">
+<h1>Documentation</h1>
+<p>These checklists can be used to help you keep track of your progress but do not make a permanent record of the checks carried out. Please make sure you complete a QR log with the steps taken to assure the statistical narrative.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

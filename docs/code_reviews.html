@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Code reviews</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Official Statistics</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="excel.html">Excel tables</a>
+</li>
+<li>
+  <a href="html_outputs.html">HTML outputs</a>
+</li>
+<li>
+  <a href="code_reviews.html">Code Review</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Code reviews</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#reproducible-analytical-pipelines-rap">Reproducible analytical pipelines (RAP)</a></li>
+<li><a href="#git-and-gitlab">Git and GitLab</a><ul>
+<li><a href="#accounts">Accounts</a></li>
+<li><a href="#cloning-a-repository">Cloning a repository</a></li>
+<li><a href="#branches-and-merge-requests">Branches and merge requests</a></li>
+</ul></li>
+<li><a href="#code-reviews">Code reviews</a><ul>
+<li><a href="#what-to-review">What to review</a></li>
+<li><a href="#when-to-review">When to review</a></li>
+<li><a href="#commits">Commits</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="reproducible-analytical-pipelines-rap" class="section level1">
+<h1>Reproducible analytical pipelines (RAP)</h1>
+<p>As part of RAP development all code should be peer reviewed by another member of the Official Statistics team. There are a wide variety of skills and strengths within the team which may mean that a RAP project may not be able to be fully reviewed by a single team member, in these instances a review should take place under the guidance of a senior person and the opportunity be used to share knowledge.</p>
+<p>This guidance is not intended to provide an in-depth overview of Git, GitLab, or version control software, but give a list of steps that should be followed during RAP development and improvement to quality assure our code. By following these practices we ensure that we are building in quality from the very initial stages of our statistics production, while also helping to build skills and share knowledge within the team.</p>
+<p>For useful Git resources please see:</p>
+<ul>
+<li><p><a href="https://happygitwithr.com/">Happy Git for the useR</a></p></li>
+<li><p><a href="https://r-bio.github.io/intro-git-rstudio/">intro to git with RStudio</a></p></li>
+<li><p><a href="https://docs.gitlab.com/">GitLab documentation</a></p></li>
+</ul>
+</div>
+<div id="git-and-gitlab" class="section level1">
+<h1>Git and GitLab</h1>
+<p>All Official Statistics code projects should be stored and managed using version control software such as Git. The current NHSBSA platform of choice is GitLab and can be accessed on the AON VPN at <a href="https://gitlab.cloud.nhsbsa.nhs.uk/" class="uri">https://gitlab.cloud.nhsbsa.nhs.uk/</a>.</p>
+<div id="accounts" class="section level2">
+<h2>Accounts</h2>
+<p>A GitLab account should automatically be created for you on joining the team, however if this has not been actioned a service request must be raised FAO of Platform Services. In your request ask to be made a <code>maintainer</code> of the <code>Insight &gt; Statistics</code> group.</p>
+<p>On first accessing the <a href="https://gitlab.cloud.nhsbsa.nhs.uk/">NHSBSA private GitLab instance</a> you might be greeted with a warning from your browser that the connection is not secure. Ignore this warning by navigating to the advanced settings link and proceeding to website.</p>
+</div>
+<div id="cloning-a-repository" class="section level2">
+<h2>Cloning a repository</h2>
+<p>Most Official Statistics code repositories will be mainly <code>R</code> based with <code>SQL</code> used to extract data from the Data Warehouse, therefore we can use the built in <code>Git</code> tools in R Studio to manage our projects. Currently, SSH keys cannot be used to clone from the NHSBSA GitLab, therefore we have to use HTTPS. Before we do anything in R Studio we have to change a config setting for <code>Git</code>. Open a command prompt (you can do this quickly by bringing up the windows menu by pressing the windows key, and then searching for ‘cmd’), and enter the following line of code:</p>
+<p><code>git config --global http.sslVerify false</code></p>
+<p>This bypasses the SSL certificate warning that you may have seen by accessing the GitLab instance in your browser. You can check if this has been successful by entering <code>git config --list</code>.</p>
+<p>You can now clone a repository by creating a ‘new project’ from the project selection drop down in the top right hand corner of R Studio. This will then open a dialogue box that will allow you to create a project from version control &gt; Git and will ask you for the repository URL. This can be copied from the GitLab website. However it will be provided in the format:</p>
+<p><a href="https://dps-gitlab.service.nhsbsa/insight/statistics/prescription-cost-analysis-rap.git" class="uri">https://dps-gitlab.service.nhsbsa/insight/statistics/prescription-cost-analysis-rap.git</a></p>
+<p>You will notice that the domain name is <strong>dps-gitlab.service.nhsbsa</strong>. This portion of the URL will need changing to <strong>gitlab.cloud.nhsbsa.nhs.uk</strong> in order to be able to clone.</p>
+<p>You can still also clone repositories using the Git command line or other software such as GitHub Desktop.</p>
+</div>
+<div id="branches-and-merge-requests" class="section level2">
+<h2>Branches and merge requests</h2>
+<p>When working collaboratively on a project all code additions, changes, and improvements should be handled using feature branches and merge requests. For example, if a new function is being added to an existing RAP a new branch should be created where code is created and tested before a merge request is submitted to trigger a code review by another member of the team.</p>
+<p>At the moment there are no tools to handle merge requests within R Studio, so these are all managed on the GitLab website. However, any code can still be viewed in the project by switching between the appropriate branches.</p>
+<p>Merge requests should be used trigger code reviews by other members of the team, and no branch should be merged without approval from at least one other person. Any member of the team can perform a code review so long as they feel comfortable doing so. Code reviews should be performed collaboratively if there are some advanced techniques used in the code and approval sought from all involved.</p>
+</div>
+</div>
+<div id="code-reviews" class="section level1">
+<h1>Code reviews</h1>
+<p>Code reviews are intended to improve code quality, catch bugs, make sure code is well documented, and provides opportunities to share skills and knowledge in the team.</p>
+<p>There are lots of opinions in the wild about code reviews, there are no hard and fast rules for what a review should look like or a checklist to go through to make a good one. Therefore it is essential that they are used to be constructive and supportive, reviewers are there to critique the code, not the coder (<strong>GOOD:</strong> “good work”, “perhaps you could try x”, “what is the reasoning behind this choice?” <strong>BAD:</strong> “this doesn’t work”, “you should have done y”, “poor choice, do what I would do instead”).</p>
+<p>Some resources that first time reviewers might find handy (although they’re all geared towards software engineering rather than analytical code).</p>
+<ul>
+<li><p><a href="https://google.github.io/eng-practices/review/reviewer/looking-for.html">Google’s guide to code review</a></p></li>
+<li><p><a href="https://www.codeproject.com/Articles/524235/Codeplusreviewplusguidelines">In-depth checklist and tips</a></p></li>
+<li><p><a href="https://github.com/thoughtbot/guides/tree/main/code-review">Quick tips</a></p></li>
+<li><p><a href="https://smartbear.com/learn/code-review/why-review-code/">Why review code?</a></p></li>
+</ul>
+<div id="what-to-review" class="section level2">
+<h2>What to review</h2>
+<p>When developing a RAP, all code – SQL and R – should be subject to a review. If the RAP is too large to be handled in one review then it should be broken down into related chunks and assigned to multiple reviewers.</p>
+<p>If making improvements to an existing RAP then only code that changes the behaviour of the RAP, or changes it’s outputs should be reviewed. For example, making amendments to improve performance of code doesn’t need to be reviewed. However, if changing a chart library or making changes to the data extracted from the data warehouse then a full review should be triggered.</p>
+</div>
+<div id="when-to-review" class="section level2">
+<h2>When to review</h2>
+<p>Reviews should only be triggered after all work is complete on a project or feature of the RAP that is being improved, and only after all automated checks (unit tests, style checks, etc.) have been completed and passed. The code should have been formally and informally tested by the developing statistician before it comes to a reviewer. That is, it will run without issue in the manner as intended. Don’t submit for review if you don’t know if the join you’re using is faulty or not.</p>
+</div>
+<div id="commits" class="section level2">
+<h2>Commits</h2>
+<p>As a developer, you should get into the habit of using commits little and often. Your commit messages can help a reviewer follow your logic for doing something or even how something works. They should always be written in the imperative as well – fix bug, not fixed bug. e.g.</p>
+<pre><code>create visualisation total items
+
+use NHSBSA highcharts functions to create line chart for total items
+</code></pre>
+<pre><code>fix data manipulation bug
+
+use group_map2() within mutate() in order to calculate rates 
+within groups correctly
+</code></pre>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

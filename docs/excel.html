@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Excel tables</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Official Statistics</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="excel.html">Excel tables</a>
+</li>
+<li>
+  <a href="html_outputs.html">HTML outputs</a>
+</li>
+<li>
+  <a href="code_reviews.html">Code Review</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Excel tables</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#supporting-summary-tables">Supporting summary tables</a></li>
+<li><a href="#data">Data</a><ul>
+<li><a href="#checklist">Checklist</a></li>
+</ul></li>
+<li><a href="#formatting">Formatting</a><ul>
+<li><a href="#checklist-1">Checklist</a></li>
+</ul></li>
+<li><a href="#documentation">Documentation</a></li>
+</ul>
+</div>
+
+<div id="supporting-summary-tables" class="section level1">
+<h1>Supporting summary tables</h1>
+<p>All of our statistics outputs are published with supporting Excel summary tables that contain the most granular data that we release for each publication. This may also include data that is not part of or not discussed in the main summary narrative.</p>
+<p>There are a number of data and formatting checks that we need to carry out on the supporting tables to make sure that they are suitable for release, including meeting GDS accessibility guidelines where possible and that statistical disclosure control (SDC) has been applied where appropriate. Automation of Excel formatting and SDC application is under development to make this task easier and less prone to error, however checks will always be required.</p>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<p>The most important part of any publication is the data that is based upon; high quality, accurate data is the foundation of all of our statistics. If all data is correct then anything created further downstream including charts, graphics, and analysis has much less room for error. It follows then that the data in the supporting tables should be the first thing to be checked once the publication is ready.</p>
+<p>The data in the excel tables should be checked after a code review of the <code>SQL</code> to extract the data from data warehouse has been completed. If the publication has an existing RAP with previously reviewed code then a code review is not necessary unless any code changes have been implemented.</p>
+<p>Below is a checklist of the things that should be considered when assuring the data. This list <strong>is not</strong> exhaustive.</p>
+<p><strong>Please note: These checkboxes will not stay marked if you refresh or navigate away from this page</strong></p>
+<div id="checklist" class="section level2">
+<h2>Checklist</h2>
+<p><input type="checkbox" unchecked> total items and NIC match between tables</input><br />
+<em>Patient counts will not match depending on the level that they are taken at.</em></p>
+<p><input type="checkbox" unchecked> total items and NIC match other published sources of data</input><br />
+<em>This can include ePACT2 and ODP, though certain criteria might mean this step is not always possible</em></p>
+<p><input type="checkbox" unchecked> reproducible breakdowns match ePACT2/EDW</input><br />
+<em>Not all breakdowns such as those by age are reproducible from ePACT2</em></p>
+<p><input type="checkbox" unchecked> are you able to recreate the data by re-running the RAP <code>SQL</code> code</input></p>
+<p><input type="checkbox" unchecked> does the data meet the requirements set out</input><br />
+<em>Is the data for England only? Are there any erroneous data points? Are the breakdowns at an appropriate level?</em></p>
+<p><input type="checkbox" unchecked> has external data been sourced correctly</input><br />
+<em>Is it clear where external data has come from? Is it cited correctly?</em></p>
+</div>
+</div>
+<div id="formatting" class="section level1">
+<h1>Formatting</h1>
+<p>Once the underlying data of the publication has been checked we need to make sure that the formatting of the spreadsheets is correct and accessible as possible. GSS have issued guidance on releasing statistics in spreadsheets that can be found on their website (<a href="https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/" class="uri">https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/</a>).</p>
+<p><strong>All NHSBSA GSG badged statisticians or those involved with Official Statistics production should familiarise themselves with this guidance</strong></p>
+<p>It should be expected that the responsible statistician of the publication has ensured that this guidance has been followed, however this should be checked and any elements that do not match this guidance should have a valid reason provided for it.</p>
+<p>Much of the checklist below comes from <a href="https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/#section-2">the checklists provided by GSS themselves</a>. The elements below are those listed as essential for passing accessibility criteria by GSS.</p>
+<div id="checklist-1" class="section level2">
+<h2>Checklist</h2>
+<p><input type="checkbox" unchecked> are tables marked up as such, including a meaningful name</input></p>
+<p><input type="checkbox" unchecked> have all merged cells, split cells, and nested tables been removed</input></p>
+<p><input type="checkbox" unchecked> are there no blank rows or columns within tables</input></p>
+<p><input type="checkbox" unchecked> do all tables have a tagged header row</input></p>
+<p><input type="checkbox" unchecked> has ‘wrap text’ been applied to all cells with overflowing text</input></p>
+<p><input type="checkbox" unchecked> cells in a table with no data should not be left empty</input></p>
+<p><input type="checkbox" unchecked> symbols or superscript should not be used to signpost notes</input></p>
+<p><input type="checkbox" unchecked> links must be accessible</input></p>
+<p><input type="checkbox" unchecked> have all worksheets been given a descriptive title which are tagged and formatted correctly</input></p>
+<p><input type="checkbox" unchecked> there should be no headers, footers, floating text boxes, or floating toolbars</input></p>
+<p><input type="checkbox" unchecked> colour should not be used in any way to convery a message or meaning e.g. RAG status</input></p>
+<p><input type="checkbox" unchecked> if using colour for emphasis check the contrast</input></p>
+<p><input type="checkbox" unchecked> do all worksheets have unique names or numbers</input></p>
+<p><input type="checkbox" unchecked> have all blank worksheets been removed</input></p>
+<p><input type="checkbox" unchecked> is all information required to understand the data above the table located in column A</input></p>
+<p><input type="checkbox" unchecked> do all tables start in column A</input></p>
+<p><input type="checkbox" unchecked> has a spelling and grammar check been ran and passed</input></p>
+<p><input type="checkbox" unchecked> has document information been completed (title field and document language)</input></p>
+<p><input type="checkbox" unchecked> is the cursor in cell A1 on sheet 1 when you open the workbook</input></p>
+</div>
+</div>
+<div id="documentation" class="section level1">
+<h1>Documentation</h1>
+<p>These checklists can be used to help you keep track of your progress but do not make a permanent record of the checks carried out. Please make sure you complete a QR log with the steps taken to assure supporting excel tables and data.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
