@@ -1,0 +1,53 @@
+---
+title: "Supporting docs"
+---
+
+# Supporting documentation
+
+Although the narrative and data tables of a publication form the main body of the release, we also publish supporting documentation such as a background information and methodology note and user engagement plan. It's important that these are correct also, as these provide users with information to support their understanding of the statistics.
+
+Common checks should be made against all supporting documents, such as:
+
+* a SPAG (spelling and grammar) check
+* check for formatting issues
+* is there a document release note and contents table
+* has the contents table been updated to reflect any amendments
+* are there page numbers
+
+# Background information and methodology
+
+The background information and methodology note is used to give users of our statistics the necessary info about our data to correctly use and interpret it. We know that users can quickly draw incorrect or misleading conclusions from our statistics if we do not provide the right caveats and context in how to use our data. The responsible statistician for the release should create the background information and methodology note alongside the statistics. At the moment this is done via PDF, however we should investigate migrating to HTML documents as part of creating statistics as a static website.
+
+The content of the document should be proof read for accuracy and the person reviewing should suggest any amendments they think makes the content clear and easier to understand, or suggest areas that could be expanded to provide greater context.
+
+Each background note should should contain the following sections:
+
+* background information -- this should detail how the data is collected and any pertinent information how it is structured
+
+* methodology -- any methodologies that have been used in the statistics should be described here. For example, how a patient age is calculated or how items/patients have been assigned to IMD deciles
+
+* changes to the publication -- this section should describe any meaningful or methodological changes that have been made to the statistics for this release and also cover any changes that we plan to make to the next release
+
+* strengths and limitations -- this section should detail the strengths and limitations of the data. This should be as extensive and descriptive as possible
+
+* revisions -- details any revisions that we have made to the statistics in the past
+
+* related statistics - this section should detail related statistics release by other UK government bodies, similar open data feeds, and other resources that will help a user understand our statistics
+
+* quality -- this should be a high level QA of the data sources used in the statistics using the Eurostat dimensions of quality.
+
+* glossary -- a glossary of terms used in the document along with definitions for key fields
+
+* feedback -- as with all our documents, a feedback and contact us section
+
+# User engagement strategy
+
+This should be a version of our engagement strategy adopted to the specific release. This needs to be checked that we are covering the avenues that we using for user engagement and the information is still relevant.
+
+# Pre-release access list (PRA)
+
+This needs to be checked that it is a comprehensive list of job titles of the people that are receiving PRA to the statistics, along with those that have been involved in the production of the stats.
+
+# Documentation
+
+Once these documents have been reviewed it should be noted in the review log.

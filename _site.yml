@@ -11,6 +11,8 @@ navbar:
       href: html_outputs.html
     - text: "Code Review"
       href: code_reviews.html
+    - text: "Supporting docs"
+      href: supporting_docs.html
   right:
     - icon: fab fa-github
       href: "https://github.com/MWilson92/publication-qa-checklist"
