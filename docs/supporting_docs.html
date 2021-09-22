@@ -11,7 +11,7 @@
 
 
 
-<title>HTML outputs</title>
+<title>Supporting docs</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -275,73 +275,60 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">HTML outputs</h1>
+<h1 class="title toc-ignore">Supporting docs</h1>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#summary-narrative">Summary narrative</a></li>
-<li><a href="#figures-and-percentages">Figures and percentages</a><ul>
-<li><a href="#checklist">Checklist</a></li>
-</ul></li>
-<li><a href="#charts">Charts</a><ul>
-<li><a href="#checklist-1">Checklist</a></li>
-</ul></li>
-<li><a href="#proof-read">Proof read</a></li>
-<li><a href="#accessibility">Accessibility</a></li>
+<li><a href="#supporting-documentation">Supporting documentation</a></li>
+<li><a href="#background-information-and-methodology">Background information and methodology</a></li>
+<li><a href="#user-engagement-strategy">User engagement strategy</a></li>
+<li><a href="#pre-release-access-list-pra">Pre-release access list (PRA)</a></li>
 <li><a href="#documentation">Documentation</a></li>
 </ul>
 </div>
 
-<div id="summary-narrative" class="section level1">
-<h1>Summary narrative</h1>
-<p>Our HTML outputs are the main way in which our users will consume our statistics so it’s essential that all figures, charts, and narrative are assured before they are released. By the time that data is displayed in the HTML output it should have been assured a multiple earlier stages. However, we must check any calculated percentages and make sure that any stated figures relate to the correct time periods.</p>
-<p>In order to make the QR process easier an identical word document should be produced alongside the HTML output to allow the capturing of feedback in comments and track changes. At the moment this is done by copying the narrative from the HTML document manually into a word document.</p>
-<p><strong>In the future, possibility of having the R Markdown document produce multiple output formats should be investigated.</strong></p>
+<div id="supporting-documentation" class="section level1">
+<h1>Supporting documentation</h1>
+<p>Although the narrative and data tables of a publication form the main body of the release, we also publish supporting documentation such as a background information and methodology note and user engagement plan. It’s important that these are correct also, as these provide users with information to support their understanding of the statistics.</p>
+<p>Common checks should be made against all supporting documents, such as:</p>
+<ul>
+<li>a SPAG (spelling and grammar) check</li>
+<li>check for formatting issues</li>
+<li>is there a document release note and contents table</li>
+<li>has the contents table been updated to reflect any amendments</li>
+<li>are there page numbers</li>
+</ul>
 </div>
-<div id="figures-and-percentages" class="section level1">
-<h1>Figures and percentages</h1>
-<p>All figures, percentages, and calculated rates in the narrative need to be checked. By this point the base data should have been checked and found to be correct. However, it is still possible for calculation and rounding errors to occur, along with typos.</p>
-<p>When checking figures and percentages all narrative should be proof read with the reviewing statistician suggesting any improvements to convey the story of the statistics in a better way, even suggesting new areas for analysis or points that have not been explored fully.</p>
-<p>Below is a list of things that should be checked when assuring figures and percentages. This list <strong>is not</strong> exhaustive.</p>
-<p><strong>Please note: these checkboxes will not stay marked if you refresh or navigate away from this page.</strong></p>
-<div id="checklist" class="section level2">
-<h2>Checklist</h2>
-<p><input type="checkbox" unchecked> do the figures stated match those displayed in charts and Excel tables</input></p>
-<p><input type="checkbox" unchecked> are figures and percentages rounded to 3 significant figures in most cases</input><br />
-<em>There are some instances where rounding to 4 or to 2 or less significant figures may be appropriate.</em></p>
-<p><input type="checkbox" unchecked> have the calculated percentages and changes been verified</input></p>
-<p><input type="checkbox" unchecked> are the time periods that the figures relate to correct</input></p>
-<p><input type="checkbox" unchecked> are “increase”/“decrease” used correctly</input> <em>If the chart shows an increase between 2 time periods, is this reflected in the narrative?</em></p>
+<div id="background-information-and-methodology" class="section level1">
+<h1>Background information and methodology</h1>
+<p>The background information and methodology note is used to give users of our statistics the necessary info about our data to correctly use and interpret it. We know that users can quickly draw incorrect or misleading conclusions from our statistics if we do not provide the right caveats and context in how to use our data. The responsible statistician for the release should create the background information and methodology note alongside the statistics. At the moment this is done via PDF, however we should investigate migrating to HTML documents as part of creating statistics as a static website.</p>
+<p>The content of the document should be proof read for accuracy and the person reviewing should suggest any amendments they think makes the content clear and easier to understand, or suggest areas that could be expanded to provide greater context.</p>
+<p>Each background note should should contain the following sections:</p>
+<ul>
+<li><p>background information – this should detail how the data is collected and any pertinent information how it is structured</p></li>
+<li><p>methodology – any methodologies that have been used in the statistics should be described here. For example, how a patient age is calculated or how items/patients have been assigned to IMD deciles</p></li>
+<li><p>changes to the publication – this section should describe any meaningful or methodological changes that have been made to the statistics for this release and also cover any changes that we plan to make to the next release</p></li>
+<li><p>strengths and limitations – this section should detail the strengths and limitations of the data. This should be as extensive and descriptive as possible</p></li>
+<li><p>revisions – details any revisions that we have made to the statistics in the past</p></li>
+<li><p>related statistics - this section should detail related statistics release by other UK government bodies, similar open data feeds, and other resources that will help a user understand our statistics</p></li>
+<li><p>quality – this should be a high level QA of the data sources used in the statistics using the Eurostat dimensions of quality.</p></li>
+<li><p>glossary – a glossary of terms used in the document along with definitions for key fields</p></li>
+<li><p>feedback – as with all our documents, a feedback and contact us section</p></li>
+</ul>
 </div>
+<div id="user-engagement-strategy" class="section level1">
+<h1>User engagement strategy</h1>
+<p>This should be a version of our engagement strategy adopted to the specific release. This needs to be checked that we are covering the avenues that we using for user engagement and the information is still relevant.</p>
 </div>
-<div id="charts" class="section level1">
-<h1>Charts</h1>
-<p>All charts and visualisations should be checked alongside figures and percentages to make sure they are correct.</p>
-<div id="checklist-1" class="section level2">
-<h2>Checklist</h2>
-<p><input type="checkbox" unchecked> do the charts render correctly</input></p>
-<p><input type="checkbox" unchecked> does data displayed in the chart match the commentary below it</input></p>
-<p><input type="checkbox" unchecked> are there appropriate axis titles and title</input></p>
-<p><input type="checkbox" unchecked> does the “figure” number match the order of the figure</input> <em>For example is “figure 2” the 2nd figure?</em></p>
-<p><input type="checkbox" unchecked> is the colour palette used correct</input></p>
-<p><input type="checkbox" unchecked> if data labels are on, do they all render and are they to the correct significant figures</input></p>
-<p><input type="checkbox" unchecked> has the appropriate type of chart been used</input></p>
-<p><input type="checkbox" unchecked> is there a source link below each chart</input></p>
-</div>
-</div>
-<div id="proof-read" class="section level1">
-<h1>Proof read</h1>
-<p>The full HTML narrative should be proof read for spelling and grammar errors by the reviewing statistician as well as one other member of the team. The spell checking function of word should also be used to try and identify any errors.</p>
-</div>
-<div id="accessibility" class="section level1">
-<h1>Accessibility</h1>
-<p>Accessibility concerns should have been addressed already by the producing statistician in the R Markdown document. However, tools in Chrome such as Wave, Axe, and Lighthouse should be used to identify any errors that would cause accessibility issues.</p>
+<div id="pre-release-access-list-pra" class="section level1">
+<h1>Pre-release access list (PRA)</h1>
+<p>This needs to be checked that it is a comprehensive list of job titles of the people that are receiving PRA to the statistics, along with those that have been involved in the production of the stats.</p>
 </div>
 <div id="documentation" class="section level1">
 <h1>Documentation</h1>
-<p>These checklists can be used to help you keep track of your progress but do not make a permanent record of the checks carried out. Please make sure you complete a QR log with the steps taken to assure the statistical narrative.</p>
+<p>Once these documents have been reviewed it should be noted in the review log.</p>
 </div>
 
 
